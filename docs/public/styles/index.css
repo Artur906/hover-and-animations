@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono&display=swap'); 
+
 * {
    margin: 0;
    padding: 0;
@@ -11,7 +13,7 @@
    --button-color: rgb(87, 128, 190);  
    --button-hover: rgb(104, 216, 123); 
    --content-transparent: rgba(1, 7, 0, 0.507); 
-   --main-font: sans-serif; 
+   --main-font: 'Red Hat Mono', monospace; 
 }
 
 body {
@@ -32,9 +34,25 @@ header {
    background-color: var(--content-transparent);
 }
 
+@keyframes rotation {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(740deg);
+   }
+}
+
 header img {
+   animation: rotation 6s infinite alternate;
    width: 50px;
    margin-right: 10px;
+   transition: all 1s ease-out;
+}
+header img:hover {
+   transition: all 1.5s ease-in-out;
+   animation: rotation .2s infinite;
+   filter: drop-shadow(0 0 5px var(--back-color1)) blur(1px);
 }
 
 main {
@@ -46,13 +64,14 @@ main {
 #float-button {
    margin: auto;
    padding: 40px;
-   width: 10px;
-   height: 60%;
+   width: 10%;
+   height: 40%;
+   border-radius: 50px 0;
    background-color: var(--content-transparent);
    transition: all 1s ease-in-out;
 }
 #float-button:hover {
-   border-radius: 50px;
+   border-radius: 0 50px;
    width: 50px;
    height: 50px;
    background: var(--button-hover);
@@ -63,10 +82,34 @@ main {
 
 footer {
    width: 100%;
-   height: 40px;
+   font-size: 1em;
+   height: auto;
    color: white;
    background-color: var(--content-transparent);
    align-items: center;
    display: flex;
-   padding: 10px; 
+   padding: 20px 10px; 
+   transition: all .5s ease-in-out;
+}
+
+footer a {
+   transition: all .5s ease-in-out;
+   text-decoration: none;
+   color: white;
+   font-weight: bold;
+   text-shadow: 0 0 4px var(--back-color2);
+   padding: 20px 0;
+}
+
+#im:hover {
+   transition: all .5s ease-in-out;
+   font-size: 1.3em;
+   margin: 10px 0;
+   text-shadow: 0 0 4px white;
+   color: var(--back-color2);
+}
+
+#im:hover::after {
+   content: "< Meu Linkedin (⌐■_■)";
+   margin-left: 10px;
 }
