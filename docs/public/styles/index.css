@@ -76,10 +76,34 @@ main {
 
 footer {
    width: 100%;
-   height: 40px;
+   font-size: 1em;
+   height: auto;
    color: white;
    background-color: var(--content-transparent);
    align-items: center;
    display: flex;
-   padding: 10px; 
+   padding: 20px 10px; 
+   transition: all .5s ease-in-out;
+}
+
+footer a {
+   transition: all .5s ease-in-out;
+   text-decoration: none;
+   color: white;
+   font-weight: bold;
+   text-shadow: 0 0 4px var(--back-color2);
+   padding: 20px 0;
+}
+
+#im:hover {
+   transition: all .5s ease-in-out;
+   font-size: 1.3em;
+   margin: 10px 0;
+   text-shadow: 0 0 4px white;
+   color: var(--back-color2);
+}
+
+#im:hover::after {
+   content: "< Meu Linkedin (⌐■_■)";
+   margin-left: 10px;
 }
