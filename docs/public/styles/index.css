@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono&display=swap'); 
+
 * {
    margin: 0;
    padding: 0;
@@ -11,7 +13,7 @@
    --button-color: rgb(87, 128, 190);  
    --button-hover: rgb(104, 216, 123); 
    --content-transparent: rgba(1, 7, 0, 0.507); 
-   --main-font: sans-serif; 
+   --main-font: 'Red Hat Mono', monospace; 
 }
 
 body {
@@ -32,7 +34,18 @@ header {
    background-color: var(--content-transparent);
 }
 
+@keyframes rotation {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      filter:drop-shadow(0 0 4px var(--button-hover));
+      transform: rotate(740deg);
+   }
+}
+
 header img {
+   animation: rotation 6s infinite alternate;
    width: 50px;
    margin-right: 10px;
 }
@@ -46,13 +59,14 @@ main {
 #float-button {
    margin: auto;
    padding: 40px;
-   width: 10px;
-   height: 60%;
+   width: 10%;
+   height: 40%;
+   border-radius: 50px 0;
    background-color: var(--content-transparent);
    transition: all 1s ease-in-out;
 }
 #float-button:hover {
-   border-radius: 50px;
+   border-radius: 0 50px;
    width: 50px;
    height: 50px;
    background: var(--button-hover);
