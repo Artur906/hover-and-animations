@@ -47,6 +47,12 @@ header img {
    animation: rotation 6s infinite alternate;
    width: 50px;
    margin-right: 10px;
+   transition: all 1s ease-out;
+}
+header img:hover {
+   transition: all 1.5s ease-in-out;
+   animation: rotation .2s infinite;
+   filter: drop-shadow(0 0 5px var(--back-color1)) blur(1px);
 }
 
 main {
