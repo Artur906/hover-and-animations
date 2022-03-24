@@ -109,21 +109,26 @@ main article #title{
 
 main article textarea{
    font-size: 1em;
+   color: white;
    width: 100%;
    background-color: transparent;
    border: none;
    height: calc(100% - 100px);
-   color: white;
    outline: none;
    resize: none;
 }
 
-main article.contraste {
+article.contraste {
    background-color: var(--content-transparent-white);
    color: black;
    font-weight: bold;
    transition: all .4s ease-in-out;
 }
+
+textarea.contraste {
+   color: black;
+}
+
 
 #float-button {
    margin: auto;
